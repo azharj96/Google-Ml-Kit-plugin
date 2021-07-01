@@ -33,7 +33,7 @@
     if ([@"default" isEqualToString:type]) {
         MLKImageLabelerOptions *options = [self getImageLabelerOptions:dictionary];
         labeler = [MLKImageLabeler imageLabelerWithOptions:options];
-    } else if ([@"custom" isEqualToString:type]) {
+    } else if ([@"customLocal" isEqualToString:type]) {
         MLKCustomImageLabelerOptions *options = [self getCustomLabelerOptions:dictionary];
         labeler = [MLKImageLabeler imageLabelerWithOptions:options];
     } else {
