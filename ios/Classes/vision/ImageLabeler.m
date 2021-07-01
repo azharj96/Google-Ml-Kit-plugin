@@ -81,7 +81,11 @@
     NSString *path = optionsData[@"path"];
     NSNumber *conf = optionsData[@"confidenceThreshold"];
     
-    MLKLocalModel *localModel = [[MLKLocalModel alloc] initWithPath:path];
+    NSString *modelPath = [NSBundle.mainBundle pathForResource:@"model"
+                                                      ofType:@"tflite"
+                                                 inDirectory:@""];
+    
+    MLKLocalModel *localModel = [[MLKLocalModel alloc] initWithPath:modelPath];
     
     MLKCustomImageLabelerOptions *options = [[MLKCustomImageLabelerOptions alloc] initWithLocalModel:localModel];
     options.confidenceThreshold = conf;
